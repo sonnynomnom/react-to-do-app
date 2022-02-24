@@ -3,7 +3,7 @@ import Todo from './Todo';
 import TodoForm from './TodoForm'
 
 function TodoList() {
-  const [ todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([]);
 
   const addTodo = todo => {
     if (!todo.text || /^\s*$/.test(todo.text)) {
@@ -16,12 +16,10 @@ function TodoList() {
   }
 
   const updateTodo = (todoId, newValue) => {
-
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
       return;
     }
-    setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item))
-    );
+    setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
   };
 
   const removeTodo = id => {
@@ -42,7 +40,7 @@ function TodoList() {
 
   return (
     <div>
-      <h1>What's the Plan for Today?</h1>
+      <h1>What's the plan for today, Sonny?</h1>
       <TodoForm onSubmit={addTodo} />
       <Todo 
         todos={todos} 
@@ -55,4 +53,4 @@ function TodoList() {
   )
 }
 
-export default TodoList
+export default TodoList;
